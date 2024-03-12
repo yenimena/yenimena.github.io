@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario</title>
+<link href="../CSS/Style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+   <header><h1>Cuestionario</h1>
+</header>
+<nav>
+        <ul>
+            <li><a href="../index.html.html">Inicio</a></li>
+            <li><a href="Fotos.html">Galeria</a></li>
+            <li><a href="Practicas.html">Practicas</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+ <main>
+        <section>
+            <form>
+                <h2>1. ¿Cuál es tu anime favorito?&nbsp; &nbsp; &nbsp;</h2>
+<label>
+          <input type="radio" name="color" value="otro">
+          Nombre
+          <input type="text" name="otro_color">
+                </label>
+            </form>
+            
+            <!-- Las siguientes preguntas van aquí -->
+            
+            <form>
+                <h2>2. ¿Qué tipo de genero de anime te gusta?</h2>
+                <input type="checkbox" id="tabla_dos" name="anime" value="genero">
+                <label for="anime">romance</label><br>
+				<input type="checkbox" id="tabla_dos" name="anime" value="genero">
+                <label for="anime">acción</label><br>
+				<input type="checkbox" id="tabla_dos" name="anime" value="genero">
+                <label for="anime">comedia</label><br>
+                <input type="checkbox" id="otro" name="anime" value="Otro">
+                <label for="otro">Otro:</label>
+                <input type="text" id="otro-text" name="anime-otro"><br>
+            </form>            
+            
+            <!-- Pregunta 3 -->
+            
+            <form id="questionnaireForm">
+                <h2>3. ¿Cuál es tu plataforma para ver anime?</h2>
+                <input type="button" value="Anime mvl" onclick="selectGenre('Anime')">
+                <input type="button" value="Crunchyroll" onclick="selectGenre('anime')">
+                <input type="button" value="Legión Anime" onclick="selectGenre('anime')">
+                <input type="button" value="Otro" onclick="selectOtherGenre()">
+                <input type="text" id="otherGenreInput" style="display: none;" placeholder="Especificar otro género">
+            </form>
+            
+            <!-- Pregunta 4 -->
+            
+            <form action="procesar_respuestas.php" method="post">
+                <h2>4. ¿Qué pesonajes te llaman mas la atención?</h2>
+                <input type="radio" name="deporte" value="Protagonista Masculino"> Protagonista Masculino
+                <input type="radio" name="deporte" value="Protagonista femenina"> Protagonista femenina
+                <input type="radio" name="deporte" value="villanos"> Villanos
+                <input type="radio" name="deporte" value="otro"> Otros: <input type="text" name="otro_prota">
+                
+                <!-- Pregunta 5 -->
+                
+                <h2>5. ¿Qué tipo de comida prefieres?</h2>
+                <input type="checkbox" name="comida[]" value="italiana"> Italiana
+                <input type="checkbox" name="comida[]" value="mexicana"> Mexicana
+                <input type="checkbox" name="comida[]" value="asiatica"> Asiática
+                <input type="checkbox" name="comida[]" value="otro"> Otro: <input type="text" name="otra_comida">
+                
+                <!-- Pregunta 6 -->
+                
+                <h2>6. ¿Cuál es tu genero menos favorito?</h2>
+                <select name="Genero">
+                  <option value="Yuri">Yuri</option>
+                    <option value="yaoi">Yaoi</option>
+                    <option value="bl">BL</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <input type="text" name="otro_genero">
+                
+                <!-- Pregunta 7 -->
+                
+                <h2>7. ¿Cuál es tu estudio de animación favorito?</h2>
+                <input type="text" name="pasatiempo">
+    
+       <!-- Pregunta 8 -->
+                
+                <h2>8. ¿Cuál es el personaje principal de one piece?</h2>
+                <select name="estacion">
+                    <option value="Zoro">Zoro</option>
+                    <option value="Lufy">Lufy</option>
+                    <option value="Nami">Nami</option>
+                    <option value="Asce">Asce</option>
+                </select>
+                
+                <!-- Pregunta 9 -->
+                
+                <h2>9. ¿Prefieres Naruto o Dragon ball z?</h2>
+              <input type="radio" name="preferencia" value="Naruto"> Naruto
+              <input type="radio" name="preferencia" value="Dragon boll z"> Dragon ball z
+                
+                <!-- Pregunta 10 -->
+                
+                <h2>10. ¿Qué personaje salvarias?</h2>
+                <select name="superpoder">
+                    <option value="Asce">Asce</option>
+                    <option value="Koro sensei">Koro sensei</option>
+                    <option value="Eren">Eren</option>
+                    <option value="otro">Otro</option>
+                </select>
+              <input type="text" name="otro_superpoder">
+                
+                <input type="submit" value="Enviar respuestas">
+            </form>
+   </section>
+</main>
+    
+<script>
+        function selectGenre(genre) {
+            console.log("Seleccionaste el género: " + genre);
+        }
+
+        function selectOtherGenre() {
+            var otherGenreInput = document.getElementById("otherGenreInput");
+            otherGenreInput.style.display = "inline";
+        }
+    </script>
+</body>
+</html>
